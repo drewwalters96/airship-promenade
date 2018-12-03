@@ -37,6 +37,14 @@ data:
     kubernetes:
       kubectl: gcr.io/google_containers/hyperkube-amd64:v1.10.2
   packages:
+    mini-mirror:
+      enabled: true
+      sources:
+        - archiveType: deb
+          distribution: ubuntu-xenial
+          components:
+            - main
+            - universe
     repositories:
       - deb http://apt.dockerproject.org/repo ubuntu-xenial main
     keys:

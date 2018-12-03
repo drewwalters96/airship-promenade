@@ -36,6 +36,8 @@ data:
       controller-manager: gcr.io/google_containers/hyperkube-amd64:v1.10.2
       etcd: quay.io/coreos/etcd:v3.2.14
       scheduler: gcr.io/google_containers/hyperkube-amd64:v1.10.2
+    # TODO: Replace with quay.io/airshipit/mini-mirror:master
+    mini-mirror: quay.io/amadev/mini-mirror:v1.0
   files:
     - path: /var/lib/anchor/calico-etcd-bootstrap
       content: "# placeholder for triggering calico etcd bootstrapping"

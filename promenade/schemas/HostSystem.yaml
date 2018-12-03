@@ -101,6 +101,33 @@ data:
     packages:
       type: object
       properties:
+        mini-mirror:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            sources:
+              type: array
+              items:
+                type: object
+                properties:
+                  archiveType:
+                    type: string
+                  distribution:
+                    type: string
+                  components:
+                    type: array
+                    items:
+                      type: string
+                required:
+                  - archiveType
+                  - distribution
+                  - components
+                additionalProperties: false
+          required:
+            - enabled
+            - sources
+          additionalProperties: false
         additional:
           type: array
           items:

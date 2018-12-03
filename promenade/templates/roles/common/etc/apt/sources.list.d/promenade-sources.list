@@ -1,3 +1,11 @@
+{{ config.get_path('HostSystem:packages.mini-mirror.enabled', False) }}
+{%- if config.get_path('HostSystem:packages.mini-mirror.enabled', False) -%}
+    {%- for source in config.get_path('HostSystem:packages.mini-mirror.sources', []) %}
+      {%- for component in source.components %}
+{{ source['archiveType'] }} {{ "http://mini-mirror.ucp.svc.cluster.local" }} {{ component }}
+      {%- endfor %}
+    {%- endfor %}
+{%- endif %}
 {%- for repo in config.get_path('HostSystem:packages.repositories', []) %}
 {{ repo }}
 {%- endfor %}
